@@ -13,7 +13,7 @@ Get source code
 
 ```bash
 cd /home/orbbec/Documents/orbbec
-git clone git@github.com:obdatean/opdk.git
+git clone git@github.com:orbbec/opdk.git
 git submodule update --init --recursive
 ```
 
@@ -45,13 +45,14 @@ sudo bash install_udev_rules.sh
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
-## Getting start
+## Build Workspace
 
 ```bash
 cd /home/orbbec/Documents/orbbec/opdk
 colcon build --packages-skip nvblox_test_data nvblox_test --event-handlers  console_direct+  --cmake-args  -DCMAKE_BUILD_TYPE=Release
 ```
 
+## Getting start
 Launch node
 
 - On terminal 1, run all opdk nodes
@@ -61,6 +62,8 @@ cd /home/orbbec/Documents/orbbec/opdk
 source install/setup.bash
 ros2 launch isaac_orbbec_launch orbbec_perceptor.launch.py
 ```
+
+![This is a local image](./image/opdk_rviz.png "Optional title")
 
 - On terminal 2, visualize the TF frame hierarchy using rqt_tf_tree with forced discovery.
 
